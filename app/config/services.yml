@@ -1,9 +1,21 @@
-# Learn more about services, parameters and containers at
-# http://symfony.com/doc/current/book/service_container.html
 parameters:
-#    parameter_name: value
+    entity_product: AppBundle\Entity\Product
+    entity_merchant: AppBundle\Entity\Merchant
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+    doctrine_product_repository:
+        class: AppBundle\Repository\Doctrine\ProductRepositoryImpl
+        arguments: ["@doctrine.orm.entity_manager", %entity_product%]
+
+    doctrine_merchant_repository:
+        class: AppBundle\Repository\Doctrine\MerchantRepositoryImpl
+        arguments: ["@doctrine.orm.entity_manager", %entity_merchant%]
+
+    import_products_from_file_service:
+        class: AppBundle\Service\ImportProductsFromFileService
+        arguments: ["@doctrine_product_repository", "@doctrine_merchant_repository"]
+
+    product_by_month_and_merchant_service:
+        class: AppBundle\Service\ProductsByMonthAndByMerchantService
+        arguments: ["@doctrine_product_repository", "@doctrine_merchant_repository"]

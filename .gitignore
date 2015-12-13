@@ -1,4 +1,4 @@
-/.idea/
+.idea/
 /app/config/parameters.yml
 /bin/
 /build/
@@ -8,7 +8,6 @@
 /app/bootstrap.php.cache
 /app/cache/*
 !app/cache/.gitkeep
-/app/config/parameters.yml
 /app/logs/*
 !app/logs/.gitkeep
 /app/phpunit.xml

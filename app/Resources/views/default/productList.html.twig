@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <h1><span>Letbonus Challenge by Daniel Vaquero</span></h1>
+            </div>
+
+            <div id="list">
+                {% if productsByMonthList is defined %}
+                    <h3>Products by Month</h3>
+                    <table>
+                        <tr><th>Month</th><th>Total</th></tr>
+                        {% for product in productsByMonthList %}
+                            <tr>
+                                <td>{{ product.month }}</td>
+                                <td>{{ product.total }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+            </div>
+
+            <div id="list">
+                {% if productsByMerchantList is defined %}
+                    <h3>Products by Merchant</h3>
+                    <table>
+                        <tr><th>Merchant</th><th>Total</th></tr>
+                        {% for product in productsByMerchantList %}
+                            <tr>
+                                <td>{{ product.name }}</td>
+                                <td>{{ product.total }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    {% include 'styles.html.twig' %}
+{% endblock %}

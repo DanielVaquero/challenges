@@ -55,8 +55,17 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
-        naming_strategy: doctrine.orm.naming_strategy.underscore
-        auto_mapping: true
+#        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: false
+        mappings:
+            AppBundle:
+                type:      xml
+                dir:       %kernel.root_dir%/../src/AppBundle/Mapping
+                prefix:    AppBundle\Entity
+                is_bundle: false
+        dql:
+            string_functions:
+                MONTH: DoctrineExtensions\Query\Mysql\Month
 
 # Swiftmailer Configuration
 swiftmailer:

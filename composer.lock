@@ -4,77 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2cc287d22c8528e1fc1178700183a79e",
-    "content-hash": "d527c8d7aebb22153637f2bdfd9f98a6",
+    "hash": "8319c3293842ab5fd54269387f99cf4b",
+    "content-hash": "50261a49e9e544588594e5c970ed8950",
     "packages": [
         {
-            "name": "ddeboer/data-import",
-            "version": "0.18.0",
+            "name": "beberlei/assert",
+            "version": "v2.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ddeboer/data-import.git",
-                "reference": "cbae2f570192b738c5cec835fbf583a75c52d535"
+                "url": "https://github.com/beberlei/assert.git",
+                "reference": "7281b1fd8118b31cb9162c2fb5a4cc6f01d62ed6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ddeboer/data-import/zipball/cbae2f570192b738c5cec835fbf583a75c52d535",
-                "reference": "cbae2f570192b738c5cec835fbf583a75c52d535",
+                "url": "https://api.github.com/repos/beberlei/assert/zipball/7281b1fd8118b31cb9162c2fb5a4cc6f01d62ed6",
+                "reference": "7281b1fd8118b31cb9162c2fb5a4cc6f01d62ed6",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
-                "psr/log": "~1.0"
+                "ext-mbstring": "*",
+                "php": ">=5.3"
             },
             "require-dev": {
-                "doctrine/dbal": "*",
-                "doctrine/orm": "*",
-                "ext-iconv": "*",
-                "ext-mbstring": "*",
-                "ext-sqlite3": "*",
-                "phpoffice/phpexcel": "*",
-                "symfony/console": "~2.5.0",
-                "symfony/property-access": "*",
-                "symfony/validator": "~2.3.0"
-            },
-            "suggest": {
-                "doctrine/dbal": "If you want to use the DbalReader",
-                "ext-iconv": "For the CharsetValueConverter",
-                "ext-mbstring": "For the CharsetValueConverter",
-                "phpoffice/phpexcel": "If you want to use the ExcelReader",
-                "symfony/console": "If you want to use the ConsoleProgressWriter",
-                "symfony/property-access": "If you want to use the ObjectConverter",
-                "symfony/validator": "to use the ValidatorFilter"
+                "phpunit/phpunit": "@stable"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
-                    "Ddeboer\\DataImport": "src"
-                }
+                    "Assert": "lib/"
+                },
+                "files": [
+                    "lib/Assert/functions.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "BSD-2-Clause"
             ],
             "authors": [
                 {
-                    "name": "The community",
-                    "homepage": "https://github.com/ddeboer/data-import/graphs/contributors"
-                },
-                {
-                    "name": "David de Boer",
-                    "email": "david@ddeboer.nl"
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
                 }
             ],
-            "description": "Import data from, and export data to, a range of file formats and media",
+            "description": "Thin assertion library for input validation in business models.",
             "keywords": [
-                "csv",
-                "data",
-                "doctrine",
-                "excel",
-                "export",
-                "import"
+                "assert",
+                "assertion",
+                "validation"
             ],
-            "time": "2015-04-21 14:06:20"
+            "time": "2015-08-21 16:50:17"
         },
         {
             "name": "doctrine/annotations",
@@ -3160,7 +3144,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "ddeboer/data-import": 0
+        "beberlei/assert": 0
     },
     "prefer-stable": false,
     "prefer-lowest": false,
